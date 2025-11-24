@@ -1,0 +1,347 @@
+/* Enhanced Layout - OddCommon Redesign with Golden Ratio */
+
+/* Navbar - Minimalist with Magnetic Effect */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-sticky);
+  background: transparent;
+  mix-blend-mode: difference;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-2xl);
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--font-weight-medium);
+  color: #fff;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width var(--transition-smooth);
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Active navigation state */
+.nav-links a.active {
+  opacity: 1;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+  background: var(--accent-color);
+  height: 2px;
+}
+
+/* Sections - Golden Ratio Spacing */
+section {
+  padding: var(--spacing-4xl) var(--spacing-2xl);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Typography - Massive Scale */
+h1 {
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.9;
+  margin-bottom: var(--spacing-xl);
+  letter-spacing: -0.04em;
+  font-weight: var(--font-weight-black);
+}
+
+h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: var(--spacing-2xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.03em;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  opacity: 0.7;
+  max-width: 600px;
+  margin-bottom: var(--spacing-2xl);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.4;
+}
+
+/* Cards - Clean Grid with Gradient Borders */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-2xl);
+}
+
+.card {
+  background: transparent;
+  padding: 0;
+  border: none;
+  border-top: 1px solid var(--border-color);
+  border-radius: 0;
+  padding-top: var(--spacing-xl);
+  transition: border-color var(--transition-smooth);
+  position: relative;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+}
+
+.card h3 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.card-meta {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Skills - Enhanced 4x4 Grid - OPTIMIZED FOR PERFORMANCE */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  cursor: none;
+  transition: background 0.25s ease,
+              color 0.25s ease,
+              border-color 0.25s ease,
+              border-radius 0.25s ease,
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  will-change: transform;
+}
+
+.skill-card:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  transform: scale(1.05);
+}
+
+.skill-card.active {
+  background: var(--surface-color);
+  border-color: var(--border-hover);
+  border-radius: var(--radius-xl);
+  grid-column: 1 / -1;
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-xl);
+  color: var(--text-color);
+  transition: background 0.25s ease,
+              color 0.25s ease,
+              border-color 0.25s ease,
+              border-radius 0.25s ease,
+              padding 0.25s ease;
+}
+
+.skill-card.active:hover {
+  background: var(--surface-color);
+  color: var(--text-color);
+  transform: none;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.skill-icon-emoji {
+  font-size: 1.2rem;
+  margin-right: var(--spacing-xs);
+}
+
+.skill-icon {
+  font-weight: var(--font-weight-light);
+  font-size: 1.5rem;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: none;
+}
+
+.skill-card.active .skill-icon {
+  display: block;
+  transform: rotate(45deg);
+}
+
+/* OPTIMIZED: Using CSS Grid for smooth height animation */
+.skill-description {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease,
+              margin-top 0.3s ease;
+  opacity: 0;
+  will-change: grid-template-rows, opacity;
+}
+
+.skill-description > * {
+  min-height: 0;
+}
+
+.skill-card.active .skill-description {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: var(--spacing-lg);
+}
+
+.skill-description p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+/* Proficiency Indicators */
+.skill-proficiency {
+  display: flex;
+  gap: 4px;
+  margin-top: var(--spacing-xs);
+  transition: opacity 0.3s ease;
+}
+
+.skill-card.active .skill-proficiency {
+  opacity: 0.7;
+}
+
+/* Custom Cursor - Enhanced */
+.custom-cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+
+.custom-cursor.hover {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+}
+
+.custom-cursor.click {
+  width: 12px;
+  height: 12px;
+}
+
+.custom-cursor-follower {
+  display: none;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+  z-index: var(--z-sticky);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  
+  section {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .nav-links {
+    gap: var(--spacing-lg);
+  }
+  
+  section {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

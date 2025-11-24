@@ -1,0 +1,102 @@
+/* Component Styles */
+
+/* Weather Widget */
+.weather-widget {
+  position: fixed;
+  top: var(--spacing-lg);
+  right: calc(var(--spacing-lg) + 60px); /* Position to the left of theme toggle */
+  z-index: var(--z-sticky);
+  display: flex;
+  align-items: center;
+  font-family: var(--font-main);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none; /* Allow clicking through until visible */
+}
+
+.weather-widget.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.weather-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+  transition: all var(--transition-smooth);
+}
+
+.weather-content:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.weather-icon {
+  font-size: 1.2rem;
+}
+
+.weather-temp {
+  font-weight: var(--font-weight-bold);
+}
+
+.weather-city {
+  opacity: 0.7;
+  padding-left: 8px;
+  border-left: 1px solid var(--border-color);
+}
+
+/* Loading State */
+.weather-loading {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .weather-widget {
+    top: var(--spacing-md);
+    right: calc(var(--spacing-md) + 50px);
+  }
+  
+  .weather-content {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .weather-city {
+    display: none; /* Hide city name on small screens to save space */
+  }
+  
+  .weather-icon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-widget {
+    top: var(--spacing-sm);
+    right: calc(var(--spacing-sm) + 40px);
+  }
+}

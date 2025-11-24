@@ -1,0 +1,99 @@
+/* Theme System */
+
+/* Light Theme Specific Styles */
+
+/* Headers Black in Light Theme */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6 {
+  color: #000;
+}
+
+
+/* Let's Connect Heading - Blue in Light Theme */
+[data-theme="light"] .connect-heading {
+  color: #2563eb; /* Blue color */
+}
+
+/* Let's Connect Heading - Mustard Yellow in Dark Theme */
+[data-theme="dark"] .connect-heading,
+.connect-heading {
+  color: #d4a017; /* Mustard yellow color */
+}
+
+[data-theme="light"] .custom-cursor {
+  background: #000;
+  mix-blend-mode: normal;
+}
+
+[data-theme="light"] .custom-cursor.hover {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #000;
+}
+
+[data-theme="light"] .navbar {
+  mix-blend-mode: normal;
+}
+
+[data-theme="light"] .nav-links a {
+  color: #000;
+}
+
+[data-theme="light"] .nav-links a::after {
+  background: #000;
+}
+
+[data-theme="light"] .nav-links a.active::after {
+  background: #000; /* Black for active in light mode */
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  position: fixed;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  z-index: var(--z-sticky);
+  transition: all var(--transition-smooth);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+  transform: scale(1.1);
+}
+
+.theme-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-color);
+  transition: transform var(--transition-smooth);
+}
+
+.theme-toggle-btn:hover svg {
+  transform: rotate(180deg);
+}
+
+/* Smooth theme transition */
+body,
+.navbar,
+.card,
+.skill-card,
+button,
+input,
+textarea {
+  transition: background-color var(--transition-smooth),
+              color var(--transition-smooth),
+              border-color var(--transition-smooth);
+}

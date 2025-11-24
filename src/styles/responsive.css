@@ -1,0 +1,405 @@
+/* Mobile Responsive Styles */
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+  
+  /* Reset cursor for touch devices */
+  * {
+    cursor: auto !important;
+  }
+  
+  /* Disable mix-blend-mode on touch devices for better performance */
+  .navbar {
+    mix-blend-mode: normal !important;
+    background: rgba(5, 5, 5, 0.95) !important;
+    backdrop-filter: blur(10px);
+  }
+  
+  [data-theme="light"] .navbar {
+    background: rgba(250, 250, 250, 0.95) !important;
+  }
+  
+  /* Better touch targets */
+  a, button, .skill-card, .card {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Disable hover effects on touch */
+  .card:hover,
+  .skill-card:hover {
+    transform: none;
+  }
+}
+
+/* Tablet and below (1024px) */
+@media (max-width: 1024px) {
+  /* Adjust section padding */
+  section {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+  
+  /* Typography adjustments */
+  h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+  }
+  
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  /* Navigation adjustments */
+  .navbar {
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+  
+  .nav-links {
+    gap: var(--spacing-xl);
+  }
+  
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+  
+  /* Skills grid - 3 columns */
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+  }
+  
+  /* Card grid adjustments */
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+  }
+  
+  /* Theme toggle button */
+  .theme-toggle-btn {
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 40px;
+    height: 40px;
+  }
+  
+  .scroll-to-top {
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Mobile landscape and small tablets (768px) */
+@media (max-width: 768px) {
+  /* Section padding */
+  section {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    min-height: auto;
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  h2 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  /* Navigation - Simplified */
+  .navbar {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  .nav-links {
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+  
+  /* Skills grid - 2 columns */
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skill-card {
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+  
+  .skill-header {
+    font-size: 0.95rem;
+  }
+  
+  .skill-icon-emoji {
+    font-size: 1rem;
+  }
+  
+  .skill-description p {
+    font-size: 0.95rem;
+  }
+  
+  /* Card adjustments */
+  .card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  /* Contact section - Stack layout */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  #contact .scroll-reveal.delay-1 {
+    font-size: 1.2rem !important;
+  }
+  
+  /* Buttons */
+  .theme-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .theme-toggle-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+  }
+  
+
+}
+
+/* Mobile portrait (480px and below) */
+@media (max-width: 480px) {
+  /* Section padding - More compact */
+  section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  /* Typography - Mobile optimized */
+  h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  /* Navigation - Compact mobile nav */
+  .navbar {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-links {
+    gap: var(--spacing-sm);
+    width: 100%;
+  }
+  
+  .nav-links li {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .nav-links a {
+    font-size: 0.65rem;
+    padding: var(--spacing-xs) 0;
+    display: block;
+  }
+  
+  .nav-links a::after {
+    display: none;
+  }
+  
+  /* Skills grid - Single column */
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+  
+  .skill-card {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-lg);
+  }
+  
+  .skill-card.active {
+    padding: var(--spacing-lg);
+    margin: var(--spacing-sm) 0;
+  }
+  
+  .skill-header {
+    font-size: 0.9rem;
+  }
+  
+  .skill-description p {
+    font-size: 0.9rem;
+  }
+  
+  /* Proficiency dots - Smaller on mobile */
+  .proficiency-dot {
+    width: 6px;
+    height: 6px;
+  }
+  
+  /* Cards - Full width */
+  .card-grid {
+    gap: var(--spacing-md);
+  }
+  
+  .card {
+    padding-top: var(--spacing-md);
+  }
+  
+  .card h3 {
+    font-size: 1.25rem;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+  }
+  
+  /* Contact section text */
+  #contact h3 {
+    font-size: 1.25rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  #contact .scroll-reveal.delay-1 {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  #contact a {
+    font-size: 1.1rem !important;
+    word-break: break-all;
+  }
+  
+  #contact p {
+    font-size: 1rem !important;
+  }
+  
+  /* Map height adjustment */
+  #map {
+    height: 250px !important;
+  }
+  
+  /* Buttons - Smaller on mobile */
+  .theme-toggle-btn {
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    width: 32px;
+    height: 32px;
+  }
+  
+  .theme-toggle-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .scroll-to-top {
+    width: 36px;
+    height: 36px;
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+    font-size: 1.2rem;
+  }
+  
+
+  
+  /* Reduce animations on mobile for performance */
+  .card:hover,
+  .skill-card:hover {
+    transform: none;
+  }
+}
+
+/* Extra small devices (360px and below) */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .navbar {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .nav-links a {
+    font-size: 0.6rem;
+  }
+  
+  section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  
+  .skill-card {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .skill-header {
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+  section {
+    min-height: auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .navbar {
+    padding: var(--spacing-xs) var(--spacing-lg);
+  }
+}
