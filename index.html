@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saurya Janbandhu | System Engineer</title>
+    <meta name="description" content="Portfolio of Saurya Janbandhu, a System Engineer specializing in Integrated Systems, Microsoft Intune, and Cloud Infrastructure." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sauryajanbandhu.com/">
+    <meta property="og:title" content="Saurya Janbandhu | System Engineer">
+    <meta property="og:description" content="Portfolio of Saurya Janbandhu, a System Engineer specializing in Integrated Systems, Microsoft Intune, and Cloud Infrastructure.">
+    <meta property="og:image" content="https://sauryajanbandhu.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sauryajanbandhu.com/">
+    <meta property="twitter:title" content="Saurya Janbandhu | System Engineer">
+    <meta property="twitter:description" content="Portfolio of Saurya Janbandhu, a System Engineer specializing in Integrated Systems, Microsoft Intune, and Cloud Infrastructure.">
+    <meta property="twitter:image" content="https://sauryajanbandhu.com/og-image.jpg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./src/styles/global.css" />
+    <link rel="stylesheet" href="./src/styles/layout.css" />
+    <link rel="stylesheet" href="./src/styles/theme.css" />
+    <link rel="stylesheet" href="./src/styles/utilities.css" />
+    <link rel="stylesheet" href="./src/styles/components.css" />
+    <link rel="stylesheet" href="./src/styles/responsive.css" />
+    
+    <style>
+      /* Inline critical styles for loading state */
+      body { opacity: 0; animation: fadeIn 1s ease forwards; }
+      @keyframes fadeIn { to { opacity: 1; } }
+      
+      /* Map marker animation */
+      .custom-map-marker {
+        animation: markerPulse 2s ease-in-out infinite;
+      }
+      @keyframes markerPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#about" class="skip-to-content">Skip to content</a>
+    
+    <div id="cursor" class="custom-cursor"></div>
+    <div id="cursor-follower" class="custom-cursor-follower"></div>
+
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main id="app">
+      <!-- Content injected via JS -->
+    </main>
+
+
+
+    <!-- Leaflet Map JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <script src="./src/data.js"></script>
+    <script src="./src/scroll-effects.js"></script>
+    <script src="./src/keyboard.js"></script>
+    <script src="./src/weather.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
